@@ -1,6 +1,7 @@
 import React from 'react';
 
 const SuccessStory = () => {
+    // TODO  SuccessStory  delete
     return (
         <div className="row w-100 mx-auto">
             <h1 className='fw-medium mb-4 text-center text-success'>সফলদের গল্প</h1>
@@ -194,7 +195,7 @@ const SuccessStory = () => {
                     </div>
                 </div>
             </div>
-           
+
         </div>
 
     );

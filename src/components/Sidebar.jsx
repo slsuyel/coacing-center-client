@@ -64,6 +64,13 @@ export default function Sidebar() {
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link to="/dashboard/success " className="nav-link">
+                  <i className="nav-icon fa-solid fa-people-group"></i>
+                  <p className='text-white'>Success </p>
+                </Link>
+              </li>
+
               <div>
                 <hr className='bg-black m-0 my-2' />
               </div>
