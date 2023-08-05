@@ -50,11 +50,12 @@ export default function Sidebar() {
 
 
               <li className="nav-item">
-                <Link to="/dashboard/question" className="nav-link">
+                <Link to="/dashboard/programs" className="nav-link">
                   <i className="nav-icon fa-solid fa-file-circle-question"></i>
-                  <p className='text-white'>Question</p>
+                  <p className='text-white'>Programs</p>
                 </Link>
               </li>
+
 
               <li className="nav-item">
                 <Link to="/dashboard/users " className="nav-link">
@@ -73,15 +74,6 @@ export default function Sidebar() {
                 </Link>
               </li>
 
-              {/* <i class="fa-solid fa-house-chimney-user"></i> */}
-
-              {/* 
-              <li className="nav-item">
-                <Link to="/dashboard/users" className="nav-link">
-                  <i className="nav-icon fas fa-users"></i>
-                  <p className='text-white'>Users</p>
-                </Link>
-              </li> */}
             </ul>
           </nav>
         </div>
