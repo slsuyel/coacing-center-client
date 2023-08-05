@@ -11,7 +11,7 @@ const AboutUs = () => {
                             <div className="row">
                                 <div className="col-lg-12 col-md-12 mt-4 pt-2">
                                     <div className="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                        <img src="https://www.bootdey.com/image/241x362/FFB6C1/000000" className="img-fluid" alt="Image" />
+                                        <img src="https://i.ibb.co/5vkXpxt/slsuyel-gmail-com.png" className="img-fluid" alt="Image" />
                                         <div className="img-overlay bg-dark" />
                                     </div>
                                 </div>

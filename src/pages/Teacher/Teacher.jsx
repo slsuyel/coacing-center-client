@@ -56,7 +56,7 @@ const Teacher = () => {
             <div className='d-flex flex-wrap gap-4'>
                 {
                     teachers.map(teacher => <div key={teacher._id} style={{ lineHeight: '10px' }} className='text-center mx-auto card p-5'>
-                        <img src="https://yt3.googleusercontent.com/6rFf7GQqCrmO6CXKohNnd2qSvEy58bu3ifAorWLV6V-xh0SwDCoIRRxYYINZvzqs6w2xx_6N0e4=s900-c-k-c0x00ffffff-no-rj" alt="" width={'100px'} className="border border-2 border-primary mx-auto mb-1 rounded-circle" />
+                        <img src="https://www.shareicon.net/data/512x512/2016/10/11/841490_glasses_512x512.png" alt="" width={'100px'} className="border border-2 border-primary mx-auto mb-1 rounded-circle" />
                         <div className='text-center'>
                             <h5 className='text-indigo'>{teacher?.teacherName}</h5>
                             <h6>{teacher.university}</h6>

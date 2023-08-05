@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
 import useUser from '../hooks/useUser';
+import Loader from '../utilities/Loader';
 
 const AdminRoute = ({ children }) => {
     const location = useLocation();
@@ -8,7 +9,7 @@ const AdminRoute = ({ children }) => {
     const { userResponse, userLoading } = useUser();
 
     if (userLoading) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     if (userResponse.role == 'admin') {

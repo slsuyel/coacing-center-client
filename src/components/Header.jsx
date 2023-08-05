@@ -2,7 +2,7 @@ import { Navbar, Nav, } from 'react-bootstrap';
 import useUser from '../hooks/useUser';
 const Header = () => {
     const { userResponse, userLoading } = useUser();
-    // console.log(userResponse);
+    console.log(userResponse);
     return (
         <Navbar collapseOnSelect expand="lg" fixed="top" className=' bg-white border-2 border-bottom fw-bold navbar navbar-expand-lg navbar-light py-2 shadow-sm px-3' variant="light">
             <Navbar.Toggle aria-controls="responsive-navbar-nav " />

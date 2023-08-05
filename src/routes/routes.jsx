@@ -24,6 +24,10 @@ import Programs from "../pages/Programs/Programs";
 import AddPrograms from './../pages/Programs/AddPrograms';
 import TeacherList from "../pages/Teacher/TeacherList";
 import AddTeacher from "../pages/Teacher/AddTeacher";
+import AddSuccess from "../pages/Success/AddSuccess";
+import SuccessList from "../pages/Success/SuccessList";
+import PaymentSuccess from "../components/PaymentSuccess";
+import PaymentFailed from "../components/PaymentFailed";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -40,7 +44,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'programs/:id',
-                element: <ProgramDetails />
+                element: <PrivateRoute><ProgramDetails /></PrivateRoute>
             },
             {
                 path: 'teachers',
@@ -65,6 +69,14 @@ export const router = createBrowserRouter([
             {
                 path: "/profile",
                 element: <PrivateRoute><Profile /></PrivateRoute>,
+            },
+            {
+                path: "payment/success/:transId",
+                element: <PaymentSuccess />,
+            },
+            {
+                path: "payment/fail/:transId",
+                element: <PaymentFailed />,
             },
 
         ],
@@ -115,6 +127,14 @@ export const router = createBrowserRouter([
             {
                 path: 'users',
                 element: <Users />
+            },
+            {
+                path: 'success',
+                element: < SuccessList />
+            },
+            {
+                path: 'success/add',
+                element: <AddSuccess />
             },
 
 

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Loader from "../utilities/Loader";
 import { AuthContext } from './../Providers/AuthProviders';
 import useUser from "../hooks/useUser";
+import MyPrograms from "./MyPrograms";
 
 const Profile = () => {
     const { logOut } = useContext(AuthContext)
@@ -13,7 +14,7 @@ const Profile = () => {
     const handleLogOut = () => {
         logOut()
     }
-    console.log(student);
+    // console.log(student);
     return (
         <div className="container mt-5 pt-5">
             <div className="main-body">
@@ -103,23 +104,8 @@ const Profile = () => {
                         <div className="card">
                             <h4 className="border-bottom my-3 pb-2 text-center text-purple">তোমার কোর্স সমূহঃ</h4>
 
-                            <div className='row'>
-                                <div className="col-lg-6 col-md-6 col-sm-12" style={{ display: 'flex' }}>
-                                    <div className="card shadow">
-                                        <div className="card-header p-0">
-                                            <img src="https://udvash.com/media/Images/UDVASH/program/1/MAP22723.png" alt="image" width={'100%'} />
-                                        </div>
-                                        <div className="card-body">
-                                            <h3>
-                                                <a className='fs-6 text-center text-decoration-none' href="https://unmesh.com/Program/Details/Medical2023">মেডিকেল + ভার্সিটি Math কোর্স 2023 (গুচ্ছ প্রস্তুতি ফ্রি!)</a>
-                                            </h3>
 
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
+                            <MyPrograms />
                         </div>
 
 
