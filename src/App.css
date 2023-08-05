@@ -1,0 +1,38 @@
+body {
+  font-family: 'Mitr';
+  background-color: #e9ecef;
+  /* max-width: 1200px;
+  margin: 0 auto; */
+  /* overflow-x: hidden; */
+}
+
+a.gp-top {
+  position: absolute;
+  left: 29px;
+  font-size: 36px;
+
+}
+
+code {
+  font-family: 'Mitr';
+}
+
+.dropdown-menu {
+  min-width: 4rem;
+}
+
+
+.add-question-btn {
+  margin-right: 40px !important;
+  margin-top: 10px !important;
+  height: 40px;
+  width: 100px;
+  background: #FBB040;
+  margin: 1rem;
+  border-radius: 5px;
+  padding-top: 8.5px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #DC8B13, #e69b00, #e5de00, #e69b00, #DC8B13);
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+}
