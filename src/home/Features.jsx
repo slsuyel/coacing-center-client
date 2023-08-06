@@ -1,4 +1,5 @@
 import React from 'react';
+import image1 from '../../src/assets/img/online-courses.webp'
 
 const Features = () => {
     return (
@@ -13,21 +14,21 @@ const Features = () => {
                     <div className='row'>
                         <div className='col-3'></div>
                         <div className='col-md-9 col-sm-12'> <ul className='list-unstyled'>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i> অফলাইন/অনলাইন প্রোগ্রাম  মানসম্মত স্টাডি ম্যাটেরিয়ালস </li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i> মেধাবী ও অভিজ্ঞ শিক্ষক  মানসম্মত স্টাডি ম্যাটেরিয়ালস </li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i> মানসম্মত স্টাডি ম্যাটেরিয়ালস বেস্ট স্টুডেন্ট পোর্টাল</li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i>মানসম্মত স্টাডি ম্যাটেরিয়ালস   কনসেপ্ট বেইজড ক্লাস </li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i> ইউনিক এক্সাম সিস্টেম </li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i>মানসম্মত স্টাডি ম্যাটেরিয়ালস   Auto SMS রেজাল্ট </li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i> এক্সাম এনালাইসিস রিপোর্ট  মানসম্মত স্টাডি ম্যাটেরিয়ালস </li>
-                            <li> <i className="border border-success fa-check fa-solid me-1 p-1 ps-2 rounded-circle text-success m-1"></i> মানসম্মত স্টাডি ম্যাটেরিয়ালস  বেস্ট স্টুডেন্ট পোর্টাল </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i> অফলাইন/অনলাইন প্রোগ্রাম  মানসম্মত স্টাডি ম্যাটেরিয়ালস </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i> মেধাবী ও অভিজ্ঞ শিক্ষক  মানসম্মত স্টাডি ম্যাটেরিয়ালস </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i> মানসম্মত স্টাডি ম্যাটেরিয়ালস বেস্ট স্টুডেন্ট পোর্টাল</li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i>মানসম্মত স্টাডি ম্যাটেরিয়ালস   কনসেপ্ট বেইজড ক্লাস </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i> ইউনিক এক্সাম সিস্টেম </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i>মানসম্মত স্টাডি ম্যাটেরিয়ালস   Auto SMS রেজাল্ট </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i> এক্সাম এনালাইসিস রিপোর্ট  মানসম্মত স্টাডি ম্যাটেরিয়ালস </li>
+                            <li> <i className="border border-success fa-check fa-solid me-1 p-1  rounded-circle text-success m-1"></i> মানসম্মত স্টাডি ম্যাটেরিয়ালস  বেস্ট স্টুডেন্ট পোর্টাল </li>
                         </ul></div>
                     </div>
                 </div>
 
 
                 <div className='text-center col-md-6 col-sm-12'>
-                    <img src="https://unmesh.com/media/Images/Unmesh/uniqueExam.png" alt="" className='img-fluid' />
+                    <img src={image1} alt="" className='img-fluid' />
                 </div>
             </div>
         </div>
