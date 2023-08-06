@@ -55,7 +55,7 @@ const ProgramDetails = () => {
                                 }
                             </ul>
                         </div>
-                        <div>
+                        <div className='my-3'>
                             <p className='fs-3 mb-0 text-custom' >কোর্স ফি মাত্র <span className="fw-bold mx-2 p-3 text-warning" style={{ borderRadius: '69% 31% 40% 60% / 30% 30% 70% 70%', background: '#160295', color: 'white' }}>{program.price}</span>
                                 টাকা</p>
 

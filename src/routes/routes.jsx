@@ -8,7 +8,6 @@ import "../App.css";
 import Students from "../pages/Students/Students";
 import ErrorPage from "../components/ErrorPage";
 import EditStudent from "../pages/Students/EditStudent";
-import StudentShow from "../pages/Students/StudentShow";
 import Teacher from "../pages/Teacher/Teacher";
 import TeacherEdit from "../pages/Teacher/TeacherEdit";
 import HomePage from "../home/HomePage";
@@ -105,10 +104,6 @@ export const router = createBrowserRouter([
             {
                 path: 'student/edit/:id',
                 element: <EditStudent />
-            },
-            {
-                path: 'student/show/:id',
-                element: <StudentShow />
             },
 
             {
