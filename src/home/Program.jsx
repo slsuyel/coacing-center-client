@@ -42,7 +42,7 @@ const Program = () => {
 
                                 <div className="card-body">
                                     <h3>
-                                        <Link to='/programs/1' className='fs-3 text-center text-decoration-none' >{program.title}</Link>
+                                        <Link to={`/programs/${program._id}`} className='fs-3 text-center text-decoration-none' >{program.title}</Link>
                                     </h3>
                                     <ul>
                                         {

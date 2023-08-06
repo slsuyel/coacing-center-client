@@ -6,6 +6,7 @@ import Loader from "../../utilities/Loader";
 
 export default function Signin() {
   const { login, loading } = useContext(AuthContext)
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState('');
@@ -18,6 +19,7 @@ export default function Signin() {
   // }
 
   const handleSubmit = async (event) => {
+    setIsSubmitting(true)
     event.preventDefault();
     login(email, password)
       .then(result => {
@@ -27,6 +29,7 @@ export default function Signin() {
           'you have successfully logged in!',
           'success'
         );
+        setIsSubmitting(false);
         navigate(from, { replace: true });
       })
       .catch(error => setError(error.message));
@@ -80,8 +83,9 @@ export default function Signin() {
                       type="submit"
                       className="btn btn-primary"
                       onClick={handleSubmit}
+                      disabled={isSubmitting}
                     >
-                      Sign In
+                      {isSubmitting ? 'Loading...' : 'Sign In'}
                     </button>
                   </div>
                 </div>

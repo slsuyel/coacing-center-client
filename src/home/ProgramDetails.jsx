@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { json, useParams } from 'react-router-dom';
 import usePrograms from '../hooks/usePrograms';
 import Loader from '../utilities/Loader';
@@ -8,6 +8,7 @@ import { baseUrl } from '../baseurl/BaseUrl';
 
 const ProgramDetails = () => {
     const { user, loading } = useContext(AuthContext)
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const { id } = useParams();
     // console.log(id);
     const [programs, refetch, isLoading] = usePrograms();
@@ -16,7 +17,7 @@ const ProgramDetails = () => {
         AOS.init();
     }, []);
 
-    if (loading && isLoading) {
+    if (loading || isLoading) {
         return <Loader />;
     }
 
@@ -24,8 +25,8 @@ const ProgramDetails = () => {
 
     const data = { programId: program._id, programName: program.title, email: user.email, admissionDate: new Date() }
     const handleEnroll = () => {
-        console.log(data);
-
+        setIsSubmitting(true)
+        // console.log(data);
         fetch(`${baseUrl}/orders`, {
             method: "POST",
             headers: { "content-type": "application/json", },
@@ -33,6 +34,8 @@ const ProgramDetails = () => {
         }).then(res => res.json()).then(data => {
             //  console.log(data) 
             window.location.replace(data.url)
+
+            setIsSubmitting(false);
         })
     }
 
@@ -97,7 +100,11 @@ const ProgramDetails = () => {
 
                     </div>
                 </div>
-                <button onClick={handleEnroll} className='btn mb-4 mx-auto text-white py-2' style={{ backgroundColor: '#160295', width: '120px' }}>Enroll করো</button>
+                <button onClick={handleEnroll}
+                    disabled={isSubmitting}
+                    className='btn mb-4 mx-auto text-white py-2' style={{ backgroundColor: '#160295', width: '120px' }}>
+                    {isSubmitting ? 'Loading...' : 'Enroll করো'}
+                </button>
             </div>
         </div>
     );

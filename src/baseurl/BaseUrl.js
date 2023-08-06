@@ -1,1 +1,2 @@
-export const baseUrl = 'http://localhost:3000';
+export const baseUrl = 'https://excellence-server.vercel.app';
+/* https://excellence-server.vercel.app/ */

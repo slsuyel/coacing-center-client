@@ -8,10 +8,12 @@ import Loader from '../../utilities/Loader';
 
 const Programs = () => {
     const [programs, refetch, isLoading] = usePrograms()
+    const [isSubmitting, setIsSubmitting] = useState(false);
     if (isLoading) {
         return <Loader />
     }
     const handleProgramsDelete = async (id) => {
+        setIsSubmitting(true)
         try {
             const result = await Swal.fire({
                 title: 'Are you sure?',
@@ -27,6 +29,7 @@ const Programs = () => {
                 await fetch(`${baseUrl}/programs/${id}`, {
                     method: 'DELETE',
                 });
+                setIsSubmitting(false);
                 toast.success('Programs deleted successfully!', {
                     position: 'top-right',
                     autoClose: 3000,
