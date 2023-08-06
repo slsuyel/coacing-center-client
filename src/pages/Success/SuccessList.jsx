@@ -8,14 +8,15 @@ const SuccessList = () => {
             <div className='content-header'>
 
                 <div className='mt-4'>
-                    <Link to='/dashboard/success/add' className='fw-medium p-1 px-2 rounded-1 text-decoration-none text-white' style={{ backgroundColor: '#160295' }}><i className="fa-solid fa-file-circle-plus"></i> গল্প যোগ করুনঃ </Link></div>
+                    <Link to='/dashboard/success/add' className='fw-medium p-1 px-2 rounded-1 text-decoration-none text-white ' style={{ backgroundColor: '#160295' }}><i className="fa-solid fa-file-circle-plus"></i> গল্প যোগ করুনঃ </Link>
+                    </div>
 
                 <div >
 
 
-                    <Link to='/dashboard/success/add' className='btn fw-medium ms-3 mt-3  rounded-1 text-white' style={{ backgroundColor: '#160295' }}><i className="fa-solid fa-file-circle-plus"></i> গল্প যোগ করুনঃ </Link>
+                    <span  className='  mt-3 '></span> 
 
-                    <div style={{ marginTop: '-25px' }}>
+                    <div >
                         <SuccessStory />
                     </div>
                 </div>

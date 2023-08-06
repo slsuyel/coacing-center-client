@@ -5,6 +5,7 @@ import Loader from '../utilities/Loader';
 import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProviders';
 import { baseUrl } from '../baseurl/BaseUrl';
+import sakibVai from '../../src/assets/img/sakib-vai.jpg'
 
 const ProgramDetails = () => {
     const { user, loading } = useContext(AuthContext)
@@ -66,33 +67,33 @@ const ProgramDetails = () => {
                     <h4 className='mb-2 my-2 text-center text-custom'>মেন্টর পরিচিতিঃ</h4>
                     <div className='d-flex flex-wrap gap-4'>
                         <div style={{ lineHeight: '10px' }} className='text-center mx-auto'>
-                            <img src="https://yt3.googleusercontent.com/6rFf7GQqCrmO6CXKohNnd2qSvEy58bu3ifAorWLV6V-xh0SwDCoIRRxYYINZvzqs6w2xx_6N0e4=s900-c-k-c0x00ffffff-no-rj" alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
+                            <img src={sakibVai} alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
                             <div className='text-center'>
-                                <h5>আয়মান সাদিক</h5>
+                                <h5>সাকিব শাহরিয়ার</h5>
                                 <h6> ঢাকা বিশ্ববিদ্যালয়</h6>
                                 <p>আইন বিভাগ</p>
                             </div>
                         </div>
                         <div style={{ lineHeight: '10px' }} className='mx-auto text-center'>
-                            <img src="https://yt3.googleusercontent.com/6rFf7GQqCrmO6CXKohNnd2qSvEy58bu3ifAorWLV6V-xh0SwDCoIRRxYYINZvzqs6w2xx_6N0e4=s900-c-k-c0x00ffffff-no-rj" alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
+                            <img src={sakibVai} alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
                             <div className='text-center'>
-                                <h5>আয়মান সাদিক</h5>
+                                <h5>সাকিব শাহরিয়ার</h5>
                                 <h6> ঢাকা বিশ্ববিদ্যালয়</h6>
                                 <p>আইন বিভাগ</p>
                             </div>
                         </div>
                         <div style={{ lineHeight: '10px' }} className='text-center mx-auto'>
-                            <img src="https://yt3.googleusercontent.com/6rFf7GQqCrmO6CXKohNnd2qSvEy58bu3ifAorWLV6V-xh0SwDCoIRRxYYINZvzqs6w2xx_6N0e4=s900-c-k-c0x00ffffff-no-rj" alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
+                            <img src={sakibVai} alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
                             <div className='text-center'>
-                                <h5>আয়মান সাদিক</h5>
+                                <h5>সাকিব শাহরিয়ার</h5>
                                 <h6> ঢাকা বিশ্ববিদ্যালয়</h6>
                                 <p>আইন বিভাগ</p>
                             </div>
                         </div>
                         <div style={{ lineHeight: '10px' }} className='text-center mx-auto'>
-                            <img src="https://yt3.googleusercontent.com/6rFf7GQqCrmO6CXKohNnd2qSvEy58bu3ifAorWLV6V-xh0SwDCoIRRxYYINZvzqs6w2xx_6N0e4=s900-c-k-c0x00ffffff-no-rj" alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
+                            <img src={sakibVai} alt="" width={'100px'} className="border border-2 border-primary mb-1 rounded-circle" />
                             <div className='text-center'>
-                                <h5>আয়মান সাদিক</h5>
+                                <h5>সাকিব শাহরিয়ার</h5>
                                 <h6> ঢাকা বিশ্ববিদ্যালয়</h6>
                                 <p>আইন বিভাগ</p>
                             </div>

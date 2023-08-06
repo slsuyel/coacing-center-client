@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import { baseUrl } from '../baseurl/BaseUrl';
 import useUser from '../hooks/useUser';
+import ayon from '../../src/assets/img/ayon.jpg'
 
 const SuccessStory = () => {
 
@@ -54,7 +55,6 @@ const SuccessStory = () => {
     return (
         <div className="row w-100 mx-auto">
             <h1 className='fw-medium mb-4 text-center text-success'>সফলদের গল্প</h1>
-
             {
                 successStory.map(success => <div key={success._id} className="col-md-3">
                     <div
@@ -67,7 +67,7 @@ const SuccessStory = () => {
                         <div className="card-header d-flex justify-content-center align-items-center border-0">
                             <img className='img-circle'
                                 width={'100px'}
-                                src="https://unmesh.com/media/Images/Unmesh/Testimonial/MAP221st.png"
+                                src={ayon}
                                 alt={success.studentName}
                                 style={{ border: "4px solid #6d9197" }}
                             />
@@ -75,7 +75,7 @@ const SuccessStory = () => {
                         <div className="card-body">
                             <h3>{success.studentName}</h3>
                             <h5>ভর্তি পরীক্ষা: {success.graduationYear}</h5>
-                            <h6 className='fs-4 fw-bold' style={{ color: "#6d9197" }}>{success.university}{success.department}</h6>
+                            <h6 className='fs-4 fw-bold' style={{ color: "#6d9197" }}>{success.university} <span className='dark-mode fs-3 px-2 rounded-circle text-warning '>{success.department}</span> </h6>
                             <div className="quote" style={{ position: "relative" }}>
                                 <span
                                     style={{

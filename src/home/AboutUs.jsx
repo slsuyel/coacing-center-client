@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
 
 const AboutUs = () => {
 
     return (
-        <div className="container my-5 py-5">
+        <div className="container my-5 pt-5">
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0">
                     <div className="row align-items-center">
@@ -61,25 +60,25 @@ const AboutUs = () => {
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-play h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">উত্কৃষ্টতা </a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark text-decoration-none">উত্কৃষ্টতা </a></h6>
                                 </div>
                             </div>
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-file-download h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">সাফল্য </a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark text-decoration-none">সাফল্য </a></h6>
                                 </div>
                             </div>
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-user h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">সৎসংস্কৃতি  </a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark text-decoration-none">সৎসংস্কৃতি  </a></h6>
                                 </div>
                             </div>
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-image h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">উন্নতি </a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark text-decoration-none">উন্নতি </a></h6>
                                 </div>
                             </div>
                         </div>

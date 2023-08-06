@@ -3,7 +3,7 @@ import image1 from '../../src/assets/img/online-courses.webp'
 
 const Features = () => {
     return (
-        <div className='w-100 mx-auto'>
+        <div className='w-100 mx-auto bg-white py-4'>
             <h1 className='fw-medium m2-4 text-center text-success'>আমাদের বৈশিষ্ট্যসমূহ</h1>
 
             <div className='align-items-center row justify-content-between mx-4'>

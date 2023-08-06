@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import usePrograms from '../../hooks/usePrograms';
 import Loader from '../../utilities/Loader';
+import program1 from '../../../src/assets/img/program1.jpg'
 
 const Programs = () => {
     const [programs, refetch, isLoading] = usePrograms()
@@ -65,14 +66,14 @@ const Programs = () => {
 
                                                 ৳ <br /> <span className='fs-5'>{program.price}</span> <br /> <span>মাত্র</span>
                                             </h6>
-                                            <img src={program.banner} alt="image" width="100%" style={{ borderRadius: '0 98px 0px 0px', background: 'red', backgroundColor: 'red' }} />
+                                            <img src={program1} alt="image" width="100%" style={{ borderRadius: '0 98px 0px 0px', background: 'red', backgroundColor: 'red' }} />
 
                                         </div>
 
                                         <div className="card-body">
-                                            <h3>
-                                                <Link to='/programs/1' className='fs-3 text-center text-decoration-none' >{program.title}</Link>
-                                            </h3>
+                                            <p>
+                                                <Link to={`/programs/${program._id}`} className='fs-3 text-center text-decoration-none' >{program.title}</Link>
+                                            </p>
                                             <ul>
                                                 {
                                                     program.features.map((feature, index) => <li key={index}>{feature}</li>)

@@ -1,14 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
+import { baseUrl } from "../baseurl/BaseUrl";
 
 const useAllStudent = () => {
-    const { refetch, data: allClass = [], isLoading } = useQuery({
+    const { refetch, data: allStudents = [], isLoading } = useQuery({
         queryKey: ["addclass",],
         queryFn: async () => {
-            const res = await fetch(`https://ass-12-server-eight.vercel.app/addclasses`)
+            const res = await fetch(`${baseUrl}/sell/programs`)
             return res.json()
         },
     })
-    return [allClass, refetch, isLoading]
+    return [allStudents, refetch, isLoading]
 };
 
 

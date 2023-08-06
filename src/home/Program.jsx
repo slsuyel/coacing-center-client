@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import program1 from '../../src/assets/img/program1.jpg'
 
 import './home.css'
 import { baseUrl } from '../baseurl/BaseUrl';
@@ -21,7 +22,6 @@ const Program = () => {
         return <Loader />
     }
 
-
     return (
 
         <div className='my-3 w-100 mx-auto container mt-5 py-4'>
@@ -36,7 +36,7 @@ const Program = () => {
 
                                         ৳ <br /> <span className='fs-5'>{program.price}</span> <br /> <span>মাত্র</span>
                                     </h6>
-                                    <img src={program.banner} alt="image" className='img-fluid' style={{ borderRadius: '0 98px 0px 0px', background: 'red', backgroundColor: 'red' }} />
+                                    <img src={program1} alt="image" className='img-fluid' style={{ borderRadius: '0 98px 0px 0px', background: 'red', backgroundColor: 'red' }} />
 
                                 </div>
 
@@ -44,10 +44,10 @@ const Program = () => {
                                     <h3>
                                         <Link to={`/programs/${program._id}`} className='fs-3 text-center text-decoration-none' >{program.title}</Link>
                                     </h3>
-                                    <ul>
+                                    <ul className='list-unstyled'>
                                         {
                                             program.features.map((feature, index) => (
-                                                <li key={index}>{feature}</li>
+                                                <li key={index}>✅{feature}</li>
                                             ))
 
                                         }
