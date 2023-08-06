@@ -26,8 +26,11 @@ import TeacherList from "../pages/Teacher/TeacherList";
 import AddTeacher from "../pages/Teacher/AddTeacher";
 import AddSuccess from "../pages/Success/AddSuccess";
 import SuccessList from "../pages/Success/SuccessList";
+<<<<<<< HEAD
 import PaymentSuccess from "../components/PaymentSuccess";
 import PaymentFailed from "../components/PaymentFailed";
+=======
+>>>>>>> 9629552b2eb794509dec85191762569b0b951f96
 export const router = createBrowserRouter([
     {
         path: "/",
