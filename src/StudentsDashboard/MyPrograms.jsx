@@ -18,7 +18,7 @@ const MyPrograms = () => {
     }, [user]);
 
 
-    console.log(myProgram);
+    // console.log(myProgram);
     return (
         <div className='row'>
             {

@@ -17,7 +17,7 @@ const AddPrograms = () => {
         event.preventDefault();
         const featuresArray = formData.features.split('\n').filter(feature => feature.trim() !== '');
         const newProgram = { ...formData, features: featuresArray };
-        console.log(newProgram);
+        // console.log(newProgram);
 
         fetch(`${baseUrl}/program`, {
             method: 'POST',

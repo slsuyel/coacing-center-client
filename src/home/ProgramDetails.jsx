@@ -7,7 +7,7 @@ import { AuthContext } from '../Providers/AuthProviders';
 import { baseUrl } from '../baseurl/BaseUrl';
 
 const ProgramDetails = () => {
-    const { user } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext)
     const { id } = useParams();
     // console.log(id);
     const [programs, refetch, isLoading] = usePrograms();
@@ -16,7 +16,7 @@ const ProgramDetails = () => {
         AOS.init();
     }, []);
 
-    if (isLoading) {
+    if (loading && isLoading) {
         return <Loader />;
     }
 

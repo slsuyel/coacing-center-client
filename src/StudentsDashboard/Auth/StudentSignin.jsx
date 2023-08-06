@@ -21,7 +21,7 @@ const StudentSignin = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form data:', formData);
+    // console.log('Form data:', formData);
     login(formData.email, formData.password)
   };
 
