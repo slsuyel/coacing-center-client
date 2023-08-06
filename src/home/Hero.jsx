@@ -1,94 +1,65 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import {
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption,
-} from 'reactstrap';
+import React from "react";
+import Slider from "react-slick";
 
 const items = [
     {
         src: 'https://udvash.com/media/Images/UDVASH/SuccessSlider/Med22Top18Success1.png',
         altText: 'Slide 1',
-        
         key: 1,
     },
     {
         src: 'https://udvash.com/media/Images/UDVASH/SuccessSlider/DU22Success.png',
         altText: 'Slide 2',
-      
         key: 2,
     },
     {
         src: 'https://udvash.com/media/Images/UDVASH/SuccessSlider/CKRUET22Success.png',
         altText: 'Slide 3',
-      
         key: 3,
     },
 ];
 
-function Hero(args) {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [animating, setAnimating] = useState(false);
-
-    const next = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
+const Hero = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,        // Enable autoplay
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            }
+            // Add more responsive breakpoints and settings as needed
+        ]
     };
-
-    const previous = () => {
-        if (animating) return;
-        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    };
-
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    };
-
-    const slides = items.map((item) => {
-        return (
-            <CarouselItem className='text-center mt-5 pt-2 w-100 mx-auto'
-                onExiting={() => setAnimating(true)}
-                onExited={() => setAnimating(false)}
-                key={item.src}
-            >
-                <img src={item.src} alt={item.altText} className='img-fluid' />
-               
-            </CarouselItem>
-        );
-    });
 
     return (
-        <Carousel 
-            activeIndex={activeIndex}
-            next={next}
-            previous={previous}
-            {...args}
-        >
-            <CarouselIndicators
-                items={items}
-                activeIndex={activeIndex}
-                onClickHandler={goToIndex}
-            />
-            {slides}
-            <CarouselControl
-                direction="prev"
-                directionText="Previous"
-                onClickHandler={previous}
-            />
-            <CarouselControl
-                direction="next"
-                directionText="Next"
-                onClickHandler={next}
-            />
-        </Carousel>
-    );
-}
+        <div className="mt-5 pt-2">
 
+            <Slider {...settings}>
+                {items.map(item => (
+                    <div key={item.key}>
+                        <img src={item.src} alt={item.altText} className="img-fluid w-100" />
+                    </div>
+                ))}
+            </Slider>
+        </div>
+    );
+};
 
 export default Hero;

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const AboutUs = () => {
 
     return (
-        <div  className="container my-5 py-5">
+        <div className="container my-5 py-5">
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0">
                     <div className="row align-items-center">
@@ -53,33 +53,33 @@ const AboutUs = () => {
                     <div className="section-title ml-lg-5">
                         <h5 className="text-custom font-weight-normal mb-3">আমাদের সম্পর্কে </h5>
                         <h4 className="title mb-4">
-                            Our mission is to <br />
-                            make your life easier.
+                            Guiding Dreams,  <br />
+                            Inspiring Success
                         </h4>
-                        <p className="text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit quod debitis praesentium pariatur temporibus ipsa, cum quidem obcaecati sunt?</p>
+                        <p className="text-muted mb-0">Our mission is to guide students towards their aspirations, fostering academic excellence and personal growth</p>
                         <div className="row">
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-play h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">Responsive</a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">উত্কৃষ্টতা </a></h6>
                                 </div>
                             </div>
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-file-download h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">Free Download</a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">সাফল্য </a></h6>
                                 </div>
                             </div>
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-user h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">Support</a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">সৎসংস্কৃতি  </a></h6>
                                 </div>
                             </div>
                             <div className="col-lg-6 mt-4 pt-2">
                                 <div className="media align-items-center rounded shadow p-3">
                                     <i className="fa fa-image h4 mb-0 text-custom" />
-                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">Development</a></h6>
+                                    <h6 className="ml-3 mb-0"><a href="#" className="text-dark">উন্নতি </a></h6>
                                 </div>
                             </div>
                         </div>
