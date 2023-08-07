@@ -31,7 +31,7 @@ const MyPrograms = () => {
                             <div className="card-body font-monospace lh-1">
                                 <p>Email : {program?.order?.email}</p>
                                 <p>Transaction Id : {program?.transactionId}</p>
-                                <p>Admission Date : {new Date(program?.order?.admissionDate).toLocaleString('en-US', { timeZone: 'UTC' })}</p>
+                                <p>Admission Date : {new Date(program?.order?.admissionDate).toLocaleString('en-US', { timeZone: 'Asia/Dhaka' })}</p>
                             </div>
                         </div>
                     </div>

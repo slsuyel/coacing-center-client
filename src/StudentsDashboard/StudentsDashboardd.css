@@ -28,12 +28,3 @@
     color: #000;
 }
 
-.selected-ans {
-    background-color: #007399b3;
-    color: #ffffff;
-    font-size: 15px;
-    padding: 4px 8px 4px 8px;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: center;
-}

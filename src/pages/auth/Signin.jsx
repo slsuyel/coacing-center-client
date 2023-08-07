@@ -19,6 +19,7 @@ export default function Signin() {
   // }
 
   const handleSubmit = async (event) => {
+    setError('')
     setIsSubmitting(true)
     event.preventDefault();
     login(email, password)
@@ -32,7 +33,8 @@ export default function Signin() {
         setIsSubmitting(false);
         navigate(from, { replace: true });
       })
-      .catch(error => setError(error.message));
+      .catch(error => setError(error.message))
+    setIsSubmitting(false)
   };
   return (
     <>
@@ -43,7 +45,7 @@ export default function Signin() {
           </div>
           <div className="card">
             <div className="card-body login-card-body">
-              <p className="login-box-msg">Login in to start your session</p>
+              {/* <p className="login-box-msg">Login in to start your session</p> */}
               <form onSubmit={handleSubmit}>
                 <div className="input-group mb-3">
                   <input
@@ -85,7 +87,7 @@ export default function Signin() {
                       onClick={handleSubmit}
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Loading...' : 'Sign In'}
+                      {isSubmitting ? 'লগিন হচ্ছে...' : 'লগিন'}
                     </button>
                   </div>
                 </div>

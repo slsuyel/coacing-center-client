@@ -20,7 +20,7 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    setError('')
     createUser(formData.email, formData.password)
       .then(result => {
         const loggedUser = result.user;
@@ -115,7 +115,7 @@ const Signup = () => {
               </label>
               <input
                 required
-                type='text'
+                type='number'
                 className='form-control'
                 id='phone'
                 name='phone'
@@ -155,7 +155,7 @@ const Signup = () => {
                 value={formData.email}
                 onChange={(event) => {
                   const { name, value } = event.target;
-                  const lowercaseValue = value.toLowerCase(); // Convert to lowercase
+                  const lowercaseValue = value.toLowerCase();
                   handleInputChange({
                     target: {
                       name,
@@ -203,7 +203,7 @@ const Signup = () => {
             </Link>
           </div>
         </div> : (navigate("/", { replace: true }))
-     }
+      }
     </>
   );
 };

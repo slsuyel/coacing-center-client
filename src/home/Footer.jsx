@@ -34,7 +34,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="card col-6 col-lg-3 mb-3 pt-2">
+                    <div className="card  col-lg-3 mb-3 pt-2">
                         <h5>সামাজিক যোগাযোগ মাধ্যম</h5>
                         <div className='d-flex gap-4'>
                             <a href="https://www.facebook.com">
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
 
             <div className="text-center px-4 py-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                © 2023. All rights reserved.
+                "© {new Date().getFullYear()} School of excellence. All rights reserved."
             </div>
         </footer>
     );

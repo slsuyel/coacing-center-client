@@ -27,7 +27,7 @@ const Hero = () => {
         slidesToScroll: 1,
         autoplay: true,        // Enable autoplay
         autoplaySpeed: 2000,
-        pauseOnHover: true,
+        // pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 768,
@@ -48,8 +48,8 @@ const Hero = () => {
     };
 
     return (
-        <div className="mt-5 pt-2 w-100 mx-auto">
-            <div style={{ width: '96%' }} className="mx-auto ">
+        <div className="mt-3 pt-2 w-100 mx-auto">
+            <div style={{ width: '90%' }} className="mx-auto container">
 
                 <Slider {...settings}>
                     {items.map(item => (

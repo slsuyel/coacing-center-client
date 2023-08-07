@@ -13,7 +13,9 @@ const Header = () => {
                     <Nav.Link className='text-dark' href="/programs">কোর্স সমূহ</Nav.Link>
 
                     <Nav.Link className='text-dark' href="/teachers">শিক্ষকের তালিকা</Nav.Link>
+
                     <Nav.Link className='text-dark' href="/contact">যোগাযোগ </Nav.Link>
+                    <Nav.Link className='text-dark' href="/blog">ব্লগ</Nav.Link>
                     <Nav.Link className='text-dark' href="/about">আমাদের সম্পর্কে</Nav.Link>
 
                     {
