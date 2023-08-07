@@ -2,8 +2,35 @@ import React from "react";
 import SalesChart from "./SalesChart";
 import RoomCharts from "./RoomCharts";
 import { CardSubtitle, Col, Row } from "reactstrap";
+import useTeacher from "../../hooks/useTeacher";
+import useAllUsers from "../../hooks/useAllUsers";
+import usePrograms from "../../hooks/usePrograms";
+import Loader from "../../utilities/Loader";
+import useTotalOrders from "../../hooks/useTotalOrders";
 
 export default function Home() {
+  const [users, ,] = useAllUsers()
+  const [teachers, ,] = useTeacher()
+  const [programs, ,] = usePrograms()
+  const [orders, ,] = useTotalOrders()
+  const emailSet = new Set();
+  const uniqueStudent = [];
+  orders.forEach(order => {
+    const email = order.order.email;
+    if (!emailSet.has(email)) {
+      emailSet.add(email);
+      uniqueStudent.push(email);
+    }
+  });
+  const totalSales = orders.reduce((total, order) => {
+    const price = parseInt(order.price);
+    if (!isNaN(price)) {
+      return total + price;
+    }
+    return total;
+  }, 0);
+
+
   return (
     <div className="content-wrapper">
       <div className="content-header">
@@ -11,25 +38,25 @@ export default function Home() {
           <div className="col-sm-6">
             <h1 className="m-0"></h1>
           </div>
-          
+
         </div>
         <div className="container-fluid">
           <CardSubtitle className="text-muted" tag="h6">
-           Report
+            Report
           </CardSubtitle>
           <div className="bg-primary text-white my-3 p-3 rounded">
             <Row>
               <Col md="4">
                 <h6>Total Students</h6>
-                <h4 className="mb-0 fw-bold">2345</h4>
+                <h4 className="mb-0 fw-bold">{orders?.length}</h4>
               </Col>
               <Col md="4">
-                <h6>Today Teachers</h6>
-                <h4 className="mb-0 fw-bold">145</h4>
+                <h6>Total Teachers</h6>
+                <h4 className="mb-0 fw-bold">{teachers?.length}</h4>
               </Col>
               <Col md="4">
-                <h6>Total Batches </h6>
-                <h4 className="mb-0 fw-bold">45</h4>
+                <h6>Total Programs </h6>
+                <h4 className="mb-0 fw-bold">{programs?.length}</h4>
               </Col>
             </Row>
           </div>
@@ -41,49 +68,49 @@ export default function Home() {
             <div className="col-lg-3">
               <div className="small-box bg-info">
                 <div className="inner">
-                  <h3>150</h3>
-                  <p>New Orders</p>
+                  <h3>{uniqueStudent?.length}</h3>
+                  <p>unique Student</p>
                 </div>
                 <div className="icon">
-                  <i className="fas fa-shopping-cart" />
+                  <i className=" fas fa-user-plus" />
                 </div>
-                
+
               </div>
             </div>
             <div className="col-lg-3">
               <div className="small-box bg-success">
                 <div className="inner">
-                  <h3>90</h3>
-                  <p>User Registrations</p>
+                  <h3>{totalSales && totalSales}</h3>
+                  <p>Total sells</p>
                 </div>
                 <div className="icon">
-                  <i className="fas fa-user-plus" />
+                  <i className="fas fa-shopping-cart" />
                 </div>
-                
+
               </div>
             </div>
             <div className="col-lg-3">
               <div className="small-box bg-danger">
                 <div className="inner">
-                  <h3>30</h3>
-                  <p>New Bookings</p>
-                </div>
-                <div className="icon">
-                  <i className="fas fa-calendar" />
-                </div>
-                
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="small-box bg-warning">
-                <div className="inner">
-                  <h3>200</h3>
+                  <h3>{users?.length}</h3>
                   <p>All Users</p>
                 </div>
                 <div className="icon">
                   <i className="fas fa-users" />
                 </div>
-                
+
+              </div>
+            </div>
+            <div className="col-lg-3">
+              <div className="small-box bg-warning">
+                <div className="inner">
+                  <h3>Loding . . .</h3>
+                  <p>Today Sell </p>
+                </div>
+                <div className="icon">
+                  <i className="fas fa-calendar " />
+                </div>
+
               </div>
             </div>
           </div>
