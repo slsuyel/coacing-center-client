@@ -66,11 +66,17 @@ export default function Sidebar() {
 
               <li className="nav-item">
                 <Link to="/dashboard/success " className="nav-link">
-                  <i className="nav-icon fa-solid fa-people-group"></i>
+                  <i className="nav-icon fa-solid fa-calendar-check"></i>
                   <p className='text-white'>Success </p>
                 </Link>
               </li>
-
+              <li className="nav-item">
+                <Link to="/dashboard/blog " className="nav-link">
+                  <i className="nav-icon fa-regular fa-newspaper"></i>
+                  <p className='text-white'>Blog </p>
+                </Link>
+              </li>
+              {/* <i class="fa-solid fa-calendar-check"></i>"></i> */}
               <div>
                 <hr className='bg-black m-0 my-2' />
               </div>

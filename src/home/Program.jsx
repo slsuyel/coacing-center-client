@@ -24,7 +24,7 @@ const Program = () => {
 
     return (
 
-        <div className='my-3 w-100 mx-auto container mt-5 py-4'>
+        <div className='my-3 w-100 mx-auto container-fluid mt-5 py-2'>
             <h1 className='fw-medium text-center text-success'>প্রোগ্রামসমূহ</h1>
             <div className="row d-flex mx-2">
                 {

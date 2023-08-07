@@ -27,6 +27,9 @@ import AddSuccess from "../pages/Success/AddSuccess";
 import SuccessList from "../pages/Success/SuccessList";
 import PaymentFailed from "../components/PaymentFailed";
 import PaymentSuccess from "../components/PaymentSuccess";
+import Blogs from "../pages/Blog/Blogs";
+import AddBlog from "../pages/Blog/AddBlog";
+import BlogPage from "../pages/Blog/BlogPage";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -60,6 +63,10 @@ export const router = createBrowserRouter([
             {
                 path: "signin",
                 element: <Signin />,
+            },
+            {
+                path: "blog",
+                element: <BlogPage />,
             },
             {
                 path: "/student/signup",
@@ -130,6 +137,14 @@ export const router = createBrowserRouter([
             {
                 path: 'success/add',
                 element: <AddSuccess />
+            },
+            {
+                path: 'blog',
+                element: <Blogs />
+            },
+            {
+                path: 'blog/add',
+                element: <AddBlog />
             },
 
 

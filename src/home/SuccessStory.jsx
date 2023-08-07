@@ -53,7 +53,7 @@ const SuccessStory = () => {
     };
 
     return (
-        <div className="row w-100 mx-auto">
+        <div className="row w-100 mx-auto container-fluid shadow py-3">
             <h1 className='fw-medium mb-4 text-center text-success'>সফলদের গল্প</h1>
             {
                 successStory.map(success => <div key={success._id} className="col-md-3">

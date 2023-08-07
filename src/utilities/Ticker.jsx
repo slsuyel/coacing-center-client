@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Ticker = () => {
     return (
-        <div className="mt-5 container pt-4">
+        <div className="mt-5 container-fluid pt-4">
             <div className="row">
                 <div className="col-md-12">
                     <div

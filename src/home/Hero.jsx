@@ -48,8 +48,8 @@ const Hero = () => {
     };
 
     return (
-        <div className="mt-3 pt-2 w-100 mx-auto">
-            <div style={{ width: '90%' }} className="mx-auto container">
+        <div className="mt-3 pt-2 w-100 mx-auto container-fluid">
+            <div style={{ width: '98%' }} className="mx-auto container-fluid">
 
                 <Slider {...settings}>
                     {items.map(item => (

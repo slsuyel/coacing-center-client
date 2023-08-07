@@ -1,10 +1,13 @@
 import { Table } from 'reactstrap';
 import useAllStudent from '../../hooks/useAllStudent';
+import Loader from '../../utilities/Loader';
 const Students = () => {
     const [allStudents, refetch, isLoading] = useAllStudent()
     console.log(allStudents);
 
-
+    if (isLoading) {
+        return <Loader />
+    }
 
     return (
         <div className='content-wrapper'>
