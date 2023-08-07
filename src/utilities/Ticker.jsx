@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useBlogs from '../hooks/useBlogs';
 
 const Ticker = () => {
+    const [allBlogs, refetch, isLoading] = useBlogs();
+    if (isLoading) {
+        return <> 'Loading' </>
+    }
+
     return (
         <div className="mt-5 container-fluid pt-4">
             <div className="row">
@@ -22,20 +28,10 @@ const Ticker = () => {
                             direction="left"
 
                         >
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
-                            <Link to='' className='text-decoration-none'>  মেডিকেল ভর্তি পরীক্ষা নতুন পদ্ধতিতে 🕮</Link>
+
+                            {
+                                allBlogs.map(blog => <Link to='/blog' className='text-decoration-none'> {blog?.title} 🕮</Link>)
+                            }
                         </marquee>
                     </div>
                 </div>

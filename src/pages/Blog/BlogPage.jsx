@@ -28,12 +28,23 @@ const BlogPage = () => {
                 <Col md={9} className="main-content mt-3">
                     <Container>
                         <Row>
-                            {allBlogs.map((blog, index) => (
-                                <Col key={blog._id} md={4} className="mb-4">
-                                    <Card style={{ width: '300px', height: '350px' }}>
+                            {allBlogs.map((blog) => (
+                                <Col key={blog._id} md={4}  className="mb-4 col-sm-12">
+                                    <Card style={{ width: '300px', height: '400px' ,margin : 'auto'}}>
                                         <CardBody>
-                                            <CardTitle className='border-bottom  mb-2 pb-1 text-danger'>{blog.title}</CardTitle>
-                                            <CardText dangerouslySetInnerHTML={{ __html: blog.content.slice(0, 320) + '. . . . .' }} />
+                                            <CardTitle className='border-bottom  mb-2 pb-1 text-danger w-100'>{blog.title}</CardTitle>
+
+                                            <div className='font-italic lh-1 row text-secondary' style={{ fontSize: '13px' }}>
+
+                                                <p className='col-6'>লিখেছেনঃ <span>{blog.author}</span></p>
+                                                <p className='col-6'>তারিখঃ <span>{new Date(blog.date).toLocaleDateString('bn-BD', {
+                                                    year: 'numeric',
+                                                    month: 'long',
+                                                    day: 'numeric'
+                                                })}</span></p>
+                                            </div>
+
+                                            <CardText dangerouslySetInnerHTML={{ __html: blog.content.slice(0, 300) + '. . . . .' }} />
                                         </CardBody>
                                         <div className='mx-auto my-2'>
                                             <button className='bg-secondary btn' onClick={() => toggleModal(blog)}>বিস্তারিত</button>
@@ -50,6 +61,17 @@ const BlogPage = () => {
             <Modal isOpen={modalOpen} toggle={toggleModal}>
                 <ModalHeader toggle={toggleModal}>{selectedBlog && selectedBlog.title}</ModalHeader>
                 <ModalBody>
+
+
+                    <div className='font-italic lh-1 row text-secondary' style={{ fontSize: '18px' }}>
+                        <p className='col-6'>লিখেছেনঃ <span>{selectedBlog && selectedBlog.author}</span></p>
+                        <p className='col-6'>তারিখঃ <span>{selectedBlog && new Date(selectedBlog.date).toLocaleDateString('bn-BD', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}</span></p>
+                    </div>
+
                     {selectedBlog && <div dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />}
                 </ModalBody>
             </Modal>

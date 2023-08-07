@@ -51,6 +51,7 @@ const Blogs = () => {
                                 <th>#</th>
                                 <th>Title</th>
                                 <th>Author</th>
+                                <th>Date</th>
 
                                 <th>Action</th>
                             </tr>
@@ -61,6 +62,17 @@ const Blogs = () => {
                                     <td>{index + 1}</td>
                                     <td>{blog?.title}</td>
                                     <td>{blog?.author}</td>
+
+                                    <td>
+                                        {new Date(blog.date).toLocaleString('bn-BD', {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric',
+                                            hour: 'numeric',
+                                            minute: 'numeric',
+                                            hour12: true
+                                        })}
+                                    </td>
                                     <td>
                                         <button onClick={() => { handleBlogDelete(blog._id) }} className='btn btn-danger'
                                             disabled={isSubmitting}
