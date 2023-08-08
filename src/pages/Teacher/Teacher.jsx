@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect} from 'react';
 import useUser from '../../hooks/useUser';
 import { Link } from 'react-router-dom';
 import useTeacher from '../../hooks/useTeacher';
@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 
 const Teacher = () => {
     const [teachers, refetch, isLoading] = useTeacher()
-    console.log(teachers);
+    // console.log(teachers);
 
     const { userResponse, userLoading } = useUser();
 
@@ -47,11 +47,14 @@ const Teacher = () => {
             console.error('Error deleting student:', error);
         }
     };
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
 
     return (
-        <div className='my-5 pt-3' style={{ backgroundColor: "#D8D2FF", minHeight: '100vh' }}>
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom" className='my-5 pt-3' style={{ backgroundColor: "#D8D2FF", minHeight: '100vh' }}>
             <h4 className='mb-2 my-2 text-center text-custom'>মেন্টর পরিচিতিঃ</h4>
             <div className='d-flex flex-wrap gap-4'>
                 {

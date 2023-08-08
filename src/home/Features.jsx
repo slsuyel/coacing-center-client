@@ -1,9 +1,14 @@
 import React from 'react';
 import image1 from '../../src/assets/img/online-courses.webp'
+import { useEffect } from 'react';
 
 const Features = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
-        <div className='w-100 mx-auto bg-white py-4 container-fluid'>
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" className='w-100 mx-auto bg-white py-4 container-fluid'>
             <h1 className='fw-medium m2-4 text-center text-success'>আমাদের বৈশিষ্ট্যসমূহ</h1>
 
             <div className='align-items-center row justify-content-between mx-4'>

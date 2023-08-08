@@ -2,9 +2,12 @@ import React from "react";
 import { useEffect } from "react";
 
 const Contact = () => {
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
-        <div className="row container w-100 mx-auto mt-5 pt-5">
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" className="row container w-100 mx-auto mt-5 pt-5">
             <div className="col-md-6">
                 <form>
                     <div className="form-group">
@@ -77,7 +80,7 @@ const Contact = () => {
                             src="https://cdn3.iconfinder.com/data/icons/customer-and-technical-support-set-1/64/_call_contact_us_customer_service_customer_support_helpline-11-512.png"
                             width="200px"
                             alt=""
-                            srcSet
+                        
                             className="img-fluid"
                         />
                     </div>

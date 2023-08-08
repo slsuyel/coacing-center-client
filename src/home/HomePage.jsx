@@ -13,7 +13,7 @@ const HomePage = () => {
             <Program />
             <Features />
             <AboutUs />
-            <SuccessStory />
+            <SuccessStory /> 
 
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import Ticker from '../../utilities/Ticker';
 import useBlogs from '../../hooks/useBlogs';
@@ -18,9 +18,12 @@ const BlogPage = () => {
     if (isLoading) {
         return <Loader />;
     }
-    // console.log(allBlogs);
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
-        <Container fluid className='mt-5'>
+        <Container data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom" fluid className='mt-5'>
             <Ticker />
             <Row>
                 <Col md={3}>

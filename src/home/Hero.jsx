@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import Slider from "react-slick";
 
 const items = [
@@ -18,7 +19,15 @@ const items = [
     },
 ];
 
+
+
+
 const Hero = () => {
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -48,7 +57,8 @@ const Hero = () => {
     };
 
     return (
-        <div className="mt-3 pt-2 w-100 mx-auto container-fluid">
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom" className="mt-3 pt-2 w-100 mx-auto container-fluid">
             <div style={{ width: '98%' }} className="mx-auto container-fluid">
 
                 <Slider {...settings}>

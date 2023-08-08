@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { baseUrl } from '../baseurl/BaseUrl';
 import useUser from '../hooks/useUser';
 import ayon from '../../src/assets/img/ayon.jpg'
+import { useEffect } from 'react';
 
 const SuccessStory = () => {
 
@@ -18,7 +19,9 @@ const SuccessStory = () => {
         return < Loader />
     }
 
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
     const handleSuccessDelete = async (id) => {
         try {
@@ -53,7 +56,8 @@ const SuccessStory = () => {
     };
 
     return (
-        <div className="row w-100 mx-auto container-fluid shadow py-3">
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom" className="row w-100 mx-auto container-fluid shadow py-3">
             <h1 className='fw-medium mb-4 text-center text-success'>সফলদের গল্প</h1>
             {
                 successStory.map(success => <div key={success._id} className="col-md-3">

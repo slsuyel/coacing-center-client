@@ -15,10 +15,7 @@ const PaymentFailed = () => {
                     <div className='text-center my-4'>
                         <Link style={{ backgroundColor: 'rgb(22, 2, 149)' }}
                             className="btn fw-bold text-warning"
-                            to="/"
-                        >
-                            Go to home
-                        </Link>
+                            to="/" > Go to home </Link>
                     </div>
                 </Col>
 

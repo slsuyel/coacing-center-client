@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 
 const AboutUs = () => {
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
-        <div className="container my-5 pt-5">
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" className="container my-5 pt-5">
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0">
                     <div className="row align-items-center">

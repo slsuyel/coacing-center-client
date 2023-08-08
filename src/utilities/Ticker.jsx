@@ -30,7 +30,7 @@ const Ticker = () => {
                         >
 
                             {
-                                allBlogs.map(blog => <Link to='/blog' className='text-decoration-none'> {blog?.title} 🕮</Link>)
+                                allBlogs.map(blog => <Link key={blog._id} to='/blog' className='text-decoration-none'> {blog?.title} 🕮</Link>)
                             }
                         </marquee>
                     </div>
