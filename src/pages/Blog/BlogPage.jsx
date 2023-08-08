@@ -3,9 +3,12 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Modal, ModalH
 import Ticker from '../../utilities/Ticker';
 import useBlogs from '../../hooks/useBlogs';
 import Loader from '../../utilities/Loader';
-import { CardImg } from 'react-bootstrap';
 
 const BlogPage = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const [allBlogs, refetch, isLoading] = useBlogs();
     const [modalOpen, setModalOpen] = useState(false); // State for modal visibility
     const [selectedBlog, setSelectedBlog] = useState(null); // State to hold the selected blog
@@ -18,9 +21,7 @@ const BlogPage = () => {
     if (isLoading) {
         return <Loader />;
     }
-    useEffect(() => {
-        AOS.init();
-    }, []);
+
     return (
         <Container data-aos="fade-up"
             data-aos-anchor-placement="top-bottom" fluid className='mt-5'>

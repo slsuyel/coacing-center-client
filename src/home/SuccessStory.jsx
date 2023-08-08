@@ -9,6 +9,9 @@ import ayon from '../../src/assets/img/ayon.jpg'
 import { useEffect } from 'react';
 
 const SuccessStory = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
     const [successStory, refetch, isLoading] = UseSuccessStory()
     // console.log(successStory);
@@ -19,9 +22,6 @@ const SuccessStory = () => {
         return < Loader />
     }
 
-    useEffect(() => {
-        AOS.init();
-    }, []);
 
     const handleSuccessDelete = async (id) => {
         try {

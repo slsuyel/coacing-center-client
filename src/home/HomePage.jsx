@@ -9,11 +9,11 @@ const HomePage = () => {
     return (
         <div>
             <Ticker />
-            <Hero />
-            <Program />
-            <Features />
+          <Hero />
+            <Program /> 
+             <Features />
             <AboutUs />
-            <SuccessStory /> 
+            <SuccessStory />  
 
         </div>
     );

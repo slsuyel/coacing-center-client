@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import useUser from '../../hooks/useUser';
 import { Link } from 'react-router-dom';
 import useTeacher from '../../hooks/useTeacher';
@@ -8,6 +8,11 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 
 const Teacher = () => {
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const [teachers, refetch, isLoading] = useTeacher()
     // console.log(teachers);
 
@@ -47,9 +52,7 @@ const Teacher = () => {
             console.error('Error deleting student:', error);
         }
     };
-    useEffect(() => {
-        AOS.init();
-    }, []);
+
 
 
     return (
