@@ -36,6 +36,9 @@ const Teacher = () => {
             if (result.isConfirmed) {
                 await fetch(`${baseUrl}/teachers/${id}`, {
                     method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem("access-token")}`,
+                    },
                 });
                 toast.success('Teacher deleted successfully!', {
                     position: 'top-right',
@@ -61,7 +64,7 @@ const Teacher = () => {
             <h4 className='mb-2 my-2 text-center text-custom'>মেন্টর পরিচিতিঃ</h4>
             <div className='d-flex flex-wrap gap-4'>
                 {
-                    teachers.map(teacher => <div key={teacher._id} style={{ lineHeight: '10px' }} className='text-center mx-auto card p-5'>
+                    teachers?.map(teacher => <div key={teacher._id} style={{ lineHeight: '10px' }} className='text-center mx-auto card p-5'>
                         <img src="https://www.shareicon.net/data/512x512/2016/10/11/841490_glasses_512x512.png" alt="" width={'100px'} className="border border-2 border-primary mx-auto mb-1 rounded-circle" />
                         <div className='text-center'>
                             <h5 className='text-indigo'>{teacher?.teacherName}</h5>

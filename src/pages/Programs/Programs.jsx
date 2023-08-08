@@ -29,6 +29,9 @@ const Programs = () => {
             if (result.isConfirmed) {
                 await fetch(`${baseUrl}/programs/${id}`, {
                     method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem("access-token")}`,
+                    },
                 });
                 setIsSubmitting(false);
                 toast.success('Programs deleted successfully!', {

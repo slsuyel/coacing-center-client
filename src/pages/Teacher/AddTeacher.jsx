@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { baseUrl } from '../../baseurl/BaseUrl';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AddTeacher = () => {
     const navigate = useNavigate();
+
     const [teacherData, setTeacherData] = useState({
         teacherName: '',
         university: '',
@@ -32,6 +33,7 @@ const AddTeacher = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("access-token")}`,
             },
             body: JSON.stringify(teacherData)
         })

@@ -33,8 +33,8 @@ export default function Signin() {
         setIsSubmitting(false);
         navigate(from, { replace: true });
       })
-      .catch(error => setError(error.message))
-    setIsSubmitting(false)
+    //   .catch(error => setError(error.message))
+    // setIsSubmitting(false)
   };
   return (
     <>

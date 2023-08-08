@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
 import {
     createUserWithEmailAndPassword,
@@ -10,6 +11,7 @@ import {
     updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { baseUrl } from "../baseurl/BaseUrl";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -37,10 +39,17 @@ const AuthProviders = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             if (currentUser) {
-                setPhoto(currentUser.photoURL);
-                setName(currentUser.displayName);
+                axios.post(`${baseUrl}/jwt`, { email: currentUser.email })
+                    .then(data => {
+                        localStorage.setItem('access-token', data.data.token)
+                        setLoading(false);
+                    })
             }
-            setLoading(false);
+            else {
+                localStorage.removeItem('access-token')
+                setLoading(false)
+            }
+
         });
         return () => {
             return unsubscribe();

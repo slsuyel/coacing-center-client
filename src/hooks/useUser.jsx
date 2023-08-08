@@ -4,15 +4,20 @@ import { baseUrl } from "../baseurl/BaseUrl";
 import { AuthContext } from "../Providers/AuthProviders";
 
 const useUser = () => {
+    const token = localStorage.getItem("access-token");
     const { user } = useContext(AuthContext);
-    const [userLoading, setUserLoading] = useState(true); 
+    const [userLoading, setUserLoading] = useState(true);
 
     const { data: userResponse } = useQuery({
         queryKey: ['user', user?.email],
         queryFn: async () => {
-            const res = await fetch(`${baseUrl}/users/${user?.email}`);
+            const res = await fetch(`${baseUrl}/users/${user?.email}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
             const data = await res.json();
-            setUserLoading(false); 
+            setUserLoading(false);
             return data;
         },
         enabled: !!user?.email,

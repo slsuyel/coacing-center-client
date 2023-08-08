@@ -7,7 +7,9 @@ const MyPrograms = () => {
     const [myProgram, setMyProgram] = useState([])
 
     useEffect(() => {
-        fetch(`${baseUrl}/myorders/${user.email}`)
+        fetch(`${baseUrl}/myorders/${user.email}`, {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem("access-token")}` }
+        })
             .then(res => res.json())
             .then(data => {
                 setMyProgram(data)
