@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Modal, ModalH
 import Ticker from '../../utilities/Ticker';
 import useBlogs from '../../hooks/useBlogs';
 import Loader from '../../utilities/Loader';
+import { CardImg } from 'react-bootstrap';
 
 const BlogPage = () => {
     const [allBlogs, refetch, isLoading] = useBlogs();
@@ -17,22 +18,24 @@ const BlogPage = () => {
     if (isLoading) {
         return <Loader />;
     }
-
+    // console.log(allBlogs);
     return (
         <Container fluid className='mt-5'>
             <Ticker />
             <Row>
                 <Col md={3}>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis et deserunt sit voluptate amet voluptates, culpa optio esse iure quam sequi enim alias voluptatem omnis ducimus excepturi dignissimos repellat iusto.
+                    <img src="https://i.ibb.co/RNZvMsH/Untitled-design.png" alt="" className='img-fluid my-3 text-center w-100' />
+
                 </Col>
                 <Col md={9} className="main-content mt-3">
                     <Container>
                         <Row>
                             {allBlogs.map((blog) => (
-                                <Col key={blog._id} md={4}  className="mb-4 col-sm-12">
-                                    <Card style={{ width: '300px', height: '400px' ,margin : 'auto'}}>
+                                <Col key={blog._id} md={4} className="mb-4 col-sm-12">
+                                    <Card style={{ width: '300px', height: '460px', margin: 'auto' }}>
                                         <CardBody>
                                             <CardTitle className='border-bottom  mb-2 pb-1 text-danger w-100'>{blog.title}</CardTitle>
+                                            <img src={blog.banner ? blog.banner : 'https://images.yourstory.com/cs/wordpress/2017/02/52-Blog.jpg?w=1152&fm=auto&ar=2:1&mode=crop&crop=faces'} alt="" className='card-img img-fluid my-2' style={{ height: '112px' }} />
 
                                             <div className='font-italic lh-1 row text-secondary' style={{ fontSize: '13px' }}>
 
@@ -71,6 +74,11 @@ const BlogPage = () => {
                             day: 'numeric'
                         })}</span></p>
                     </div>
+
+                    <div>
+                        <img src={selectedBlog && selectedBlog.banner ? selectedBlog.banner : 'https://images.yourstory.com/cs/wordpress/2017/02/52-Blog.jpg?w=1152&fm=auto&ar=2:1&mode=crop&crop=faces'} alt="" className='card-img img-fluid my-2' />
+                    </div>
+
 
                     {selectedBlog && <div dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />}
                 </ModalBody>

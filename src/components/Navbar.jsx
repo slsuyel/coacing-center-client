@@ -3,9 +3,11 @@ import bar from "../assets/clock-time.gif"
 import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
+import useUser from "../hooks/useUser";
 
 
 export default function Navbar() {
+  const { userResponse, userLoading } = useUser();
   const navigate = useNavigate()
   const { logOut } = useContext(AuthContext)
   const handleLogOut = async () => {
@@ -28,8 +30,8 @@ export default function Navbar() {
           <span className="nav-link" data-toggle="dropdown" href="#">
             <i className="fas fa-user-circle fa-lg fs-3"></i>
           </span>
-          <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-            <span className="dropdown-item">Hello, Suyel Haque</span>
+          <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right px-2">
+            <span className="dropdown-item text-danger">Hello, {userResponse?.student_name}</span>
             <span className="dropdown-item">Admin</span>
             <Button onClick={handleLogOut} className="dropdown-item">
               <i className="fas fa-sign-out-alt mr-2"></i> Log out

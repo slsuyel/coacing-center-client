@@ -59,20 +59,20 @@ const Programs = () => {
 
                         {
                             programs.map(program =>
-                                <div className="col-lg-4 col-md-6 col-sm-6" style={{ display: 'flex' }} key={program._id}>
+                                <div className="col-lg-4 col-md-6 col-sm-6" style={{ display: 'flex' }} key={program?._id}>
                                     <div className="card shadow">
                                         <div className="bg-cyan position-relative">
                                             <h6 className='position-absolute price-card'>
 
-                                                ৳ <br /> <span className='fs-5'>{program.price}</span> <br /> <span>মাত্র</span>
+                                                ৳ <br /> <span className='fs-5'>{program?.price}</span> <br /> <span>মাত্র</span>
                                             </h6>
-                                            <img src={program1} alt="image" width="100%" style={{ borderRadius: '0 98px 0px 0px', background: 'red', backgroundColor: 'red' }} />
+                                            <img src={program.banner ? program.banner : program1} alt="image" width="100%" style={{ borderRadius: '0 98px 0px 0px', background: 'red', backgroundColor: 'red' }} />
 
                                         </div>
 
                                         <div className="card-body">
                                             <p>
-                                                <Link to={`/programs/${program._id}`} className='fs-3 text-center text-decoration-none' >{program.title}</Link>
+                                                <Link to={`/programs/${program?._id}`} className='fs-3 text-center text-decoration-none' >{program?.title}</Link>
                                             </p>
                                             <ul>
                                                 {

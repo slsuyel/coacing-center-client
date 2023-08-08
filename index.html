@@ -31,11 +31,38 @@
     * {
       font-family: 'Hind Siliguri', sans-serif;
     }
+
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .my-float {
+      margin-top: 16px;
+    }
   </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed" style="background-color: #F0F2F4;">
   <div id="root"></div>
+
+
+  <a href="https://wa.link/3o3xl7" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+  </a>
+
+
+
   <script src="https://kit.fontawesome.com/85f9b80b44.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 

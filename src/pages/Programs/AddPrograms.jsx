@@ -5,40 +5,67 @@ import { useNavigate } from 'react-router-dom';
 
 const AddPrograms = () => {
     const navigate = useNavigate();
+    const [programImage, setProgramImage] = useState(null);
     const [formData, setFormData] = useState({
-        banner: 'https://udvash.com/media/Images/UDVASH/program/1/MAP22723.png',
+        banner: '',
         title: '',
         description: '',
         features: '',
         price: ''
     });
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        const featuresArray = formData.features.split('\n').filter(feature => feature.trim() !== '');
-        const newProgram = { ...formData, features: featuresArray };
-        // console.log(newProgram);
 
-        fetch(`${baseUrl}/program`, {
+        if (!programImage) {
+            console.log('programImage 404');
+            return;
+        }
+
+        // Code for uploading image to ImgBB
+        const formDataImage = new FormData();
+        formDataImage.append('image', programImage);
+        formDataImage.append('key', '51b055a0b25f5e3bfd4bac7b96599647');
+
+        const imgbbResponse = await fetch('https://api.imgbb.com/1/upload', {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(newProgram)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'User created successfully.',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    navigate('/dashboard/programs');
-                }
-            })
+            body: formDataImage,
+        });
+        const imgbbData = await imgbbResponse.json();
+        console.log(imgbbData);
+
+        // Update the banner property in formData with the image URL
+        const newFormData = { ...formData, banner: imgbbData.data.url };
+
+        // Form data for the program
+        const featuresArray = newFormData.features.split('\n').filter(feature => feature.trim() !== '');
+        const newProgram = { ...newFormData, features: featuresArray };
+
+        // Backend API call to save the program
+        try {
+            const backendResponse = await fetch(`${baseUrl}/program`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newProgram)
+            });
+            const responseData = await backendResponse.json();
+
+            if (responseData.insertedId) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Program created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate('/dashboard/programs');
+            }
+        } catch (error) {
+            console.error('Error saving program:', error);
+            // Handle error, show error message or log it
+        }
     };
 
     const handleInputChange = (event) => {
@@ -49,6 +76,7 @@ const AddPrograms = () => {
         }));
     };
 
+
     return (
         <div className='container content-wrapper'>
             <div className='content-header'>
@@ -58,7 +86,7 @@ const AddPrograms = () => {
                         <div className='col-md-8'>
                             <div className='form-group'>
                                 <label htmlFor='banner'>ব্যানার</label>
-                                <input type='file' className='bg-white border form-control-file p-1 rounded' id='banner' />
+                                <input type='file' accept="image/*" onChange={(e) => setProgramImage(e.target.files[0])} required className='bg-white border form-control-file p-1 rounded' id='banner' />
                             </div>
                         </div>
                     </div>
@@ -88,7 +116,7 @@ const AddPrograms = () => {
                         <div className='col-md-8'>
                             <div className='form-group'>
                                 <label htmlFor='price'>ফি</label>
-                                <input type='text' placeholder='ফি' className='form-control' id='price' onChange={handleInputChange} />
+                                <input type='number' placeholder='ফি' className='form-control' id='price' onChange={handleInputChange} />
                             </div>
                         </div>
                     </div>
