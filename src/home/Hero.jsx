@@ -4,17 +4,17 @@ import Slider from "react-slick";
 
 const items = [
     {
-        src: 'https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/354083137_779413950543880_1895874329705925764_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeGesjMl-aoif6mlFOhTrlnmiSYI_iD-cxqJJgj-IP5zGg7n_l-NUME8KFJE7wF-mVgrnfRoKpoPzEJ9ZBMnZoyY&_nc_ohc=MdnyuHcpSloAX--Dbs-&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfAbPFBG-H3ESgNC3L3-6li_TnOCWMcmoP_gZiwfub4L2A&oe=64D3DCE1',
+        src: 'https://plus.unsplash.com/premium_photo-1663090752502-1f38cea3be4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
         altText: 'Slide 1',
         key: 1,
     },
     {
-        src: 'https://scontent.fjsr1-2.fna.fbcdn.net/v/t39.30808-6/320070818_2573011569518920_3978755925781149069_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=19026a&_nc_eui2=AeE4Yxog47s7VcTzWmeiWfD0-CRi73KYdqj4JGLvcph2qKxAYp4SRGmN0rTAJmZAbZP1lblKUO6Bv7p9KXp76p3u&_nc_ohc=s7-jmXwSRVAAX9IzCi3&_nc_zt=23&_nc_ht=scontent.fjsr1-2.fna&oh=00_AfBWaKcnJl-nkrmzkuTkFJbD7mTBdts3fTYej-mPEED3qA&oe=64D4BF3B',
+        src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
         altText: 'Slide 2',
         key: 2,
     },
     {
-        src: 'https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/315063236_2377050069114177_4071620005494946706_n.png?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeG63xttWpsPrCtBgeRW1t9XPgLtP4ZJANQ-Au0_hkkA1J-ZG6EYmAzcCuVs3K5Za4-fNTIIKWLAzsjGVavB0Bae&_nc_ohc=50UPl6ENjoIAX9V1vLW&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfDV37YsZKu160Td0DU4lWBr1k-4_U-1nvgra20lbg2AwQ&oe=64D57B49',
+        src: 'https://images.unsplash.com/photo-1516397281156-ca07cf9746fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
         key: 3,
     },
 ];
@@ -59,12 +59,12 @@ const Hero = () => {
     return (
         <div data-aos="fade-up"
             data-aos-anchor-placement="top-bottom" className="mt-3 pt-2 w-100 mx-auto container-fluid">
-            <div style={{ width: '98%' }} className="mx-auto container-fluid">
+            <div style={{ width: '98%',height : '100%' }} className="mx-auto container-fluid">
 
                 <Slider {...settings}>
                     {items.map(item => (
                         <div key={item.key}>
-                            <img src={item.src} alt={item.altText} className="img-fluid w-100" />
+                            <img src={item.src} alt={item.altText} className="img-fluid w-100" style={{ height: '' }} />
                         </div>
                     ))}
                 </Slider>
